@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Survey</title>
-    </head>
-    <body>
-        <label for="name">Name:</label>
+
+<head>
+    <title>Survey</title>
+</head>
+
+<body>
+    <form id="survey">
+        <a href="http://127.0.0.1:5500/Assignment4-HW.html"></a>
+        <a href="http://127.0.0.1:5500/Assignment4-HW.html">Go back</a>
         <br>
-        <input type="text" id="name">
         <br>
-        <label for="age">Age:</label>
-        <br>
-        <input type="number" id="age">
-        <br>
-        <label for="country">Country of Origin:</label>
-        <br>
-        <input type="text" id="country">
-        <br>
-        <label for="favorite_country">Favorite Country that you have visited:</label>
-        <br>
-        <input type="text" id="favorite_country">
-        <br>
-        <label for="question">Do you travel a lot?</label>
-        <br>
-        <label for="yes">Yes</label>
-        <input type="radio" id="yes" name="one">
-        <br>
-        <label for="no">No</label>
-        <input type="radio" id="no" name="one">
-    </fieldset>
-    </body>
+        <fieldset>
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" id="name">
+            <br>
+            <label for="age">Age:</label>
+            <br>
+            <input type="number" id="age">
+            <br>
+            <label for="country">Country you live in:</label>
+            <br>
+            <input type="text" id="country">
+            <br>
+            <label for="favorite_country">Favorite Country that you have visited:</label>
+            <br>
+            <input type="text" id="favorite_country">
+        </fieldset>
+        <fieldset>
+            <label for="question">Do you travel a lot?</label>
+            <br>
+            <label for="yes">Yes</label>
+            <input type="radio" id="yes" name="one" value="yes">
+            <br>
+            <label for="no">No</label>
+            <input type="radio" id="no" name="one" value="no">
+            <br>
+            <label for="checkbox">Would you like to suscribe to the weekly newsletter?</label>
+            <input type="checkbox" id="checkbox" value="ticked">
+        </fieldset>
+        <input type="submit" id="submit">
+    </form>
+    <script>
+        let formID = document.getElementById("survey")
+        formID.addEventListener("submit", userData)
+        function userData(event) {
+            event.preventDefault()
+            let name = document.getElementById("name")
+            console.log(name.value)
+            let age = document.getElementById("age")
+            console.log(age.value)
+            let country = document.getElementById("country")
+            console.log(country.value)
+            let favorite_country = document.getElementById("favorite_country")
+            console.log(favorite_country.value)
+            let one = document.querySelector('input[name="one"]:checked')
+            console.log(one.value)
+            let checkbox = document.getElementById("checkbox")
+
+
+        }
+    </script>
+</body>
+
 </html>
